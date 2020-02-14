@@ -5,6 +5,6 @@ export default {
   title: 'Input',
 };
 
-export const Primary = () => <Input />;
+export const Normal = () => <Input placeholder="login" />;
 
-export const Secondary = () => <Input />;
+export const Search = () => <Input placeholder="search" search />;
