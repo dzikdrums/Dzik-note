@@ -2,7 +2,7 @@ import React from 'react';
 import Input from './Input';
 
 export default {
-  title: 'Input',
+  title: 'Atoms/Input',
 };
 
 export const Normal = () => <Input placeholder="login" />;
