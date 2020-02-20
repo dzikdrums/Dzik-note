@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import { routes } from 'routes';
 import { Provider } from 'react-redux';
+import { routes } from 'routes';
 import store from 'store';
 import MainTemplate from 'templates/MainTemplate';
-import Notes from 'views/notes';
-import Articles from 'views/articles';
-import Twitters from 'views/twitters';
+import Notes from 'views/Notes';
+import Articles from 'views/Articles';
+import Twitters from 'views/Twitters';
 import DetailsPage from 'views/DetailsPage';
 
 const Root = () => (
