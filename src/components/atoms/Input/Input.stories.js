@@ -1,10 +1,7 @@
 import React from 'react';
+import { storiesOf } from '@storybook/react';
 import Input from './Input';
 
-export default {
-  title: 'Atoms/Input',
-};
-
-export const Normal = () => <Input placeholder="login" />;
-
-export const Search = () => <Input placeholder="search" search />;
+storiesOf('Atoms/Input', module)
+  .add('Normal', () => <Input placeholder="login" />)
+  .add('Search', () => <Input placeholder="search" search />);

@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import bulbIcon from 'assets/bulb.svg';
-import logoutIcon from 'assets/logout.svg';
-import penIcon from 'assets/pen.svg';
-import plusIcon from 'assets/plus.svg';
-import twitterIcon from 'assets/twitter.svg';
-import Buttonicon from './Buttonicon';
+import { storiesOf } from '@storybook/react';
+import bulbIcon from 'assets/icons/bulb.svg';
+import logoutIcon from 'assets/icons/logout.svg';
+import penIcon from 'assets/icons/pen.svg';
+import plusIcon from 'assets/icons/plus.svg';
+import twitterIcon from 'assets/icons/twitter.svg';
+import ButtonIcon from './ButtonIcon';
 
 const YellowBackground = styled.div`
   display: flex;
@@ -13,17 +14,14 @@ const YellowBackground = styled.div`
   align-items: center;
   width: 500px;
   height: 500px;
-  background-color: hsl(49, 100%, 58%);
+  background: ${({ theme }) => theme.note};
 `;
 
-export default {
-  title: 'Atoms/Buttonicon',
-  decorators: [story => <YellowBackground>{story()}</YellowBackground>],
-};
-
-export const Bulb = () => <Buttonicon icon={bulbIcon} />;
-export const Active = () => <Buttonicon active icon={bulbIcon} />;
-export const Logout = () => <Buttonicon icon={logoutIcon} />;
-export const Pen = () => <Buttonicon icon={penIcon} />;
-export const Plus = () => <Buttonicon icon={plusIcon} />;
-export const Twitter = () => <Buttonicon icon={twitterIcon} />;
+storiesOf('Atoms/ButtonIcon', module)
+  .addDecorator(story => <YellowBackground>{story()}</YellowBackground>)
+  .add('Bulb', () => <ButtonIcon icon={bulbIcon} />)
+  .add('Active', () => <ButtonIcon active icon={bulbIcon} />)
+  .add('Logout', () => <ButtonIcon icon={logoutIcon} />)
+  .add('Pen', () => <ButtonIcon icon={penIcon} />)
+  .add('Plus', () => <ButtonIcon icon={plusIcon} />)
+  .add('Twitter', () => <ButtonIcon icon={twitterIcon} />);
